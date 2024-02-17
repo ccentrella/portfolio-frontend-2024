@@ -4,7 +4,12 @@ export default {
   content: ["./app/**/*.{js,ts}[x]"],
   theme: {
     extend: {},
+    supports: {
+      grid: 'display: grid',
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 } satisfies Config;
 
