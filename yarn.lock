@@ -1393,7 +1393,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^20.11.19":
   version: 20.11.19
   resolution: "@types/node@npm:20.11.19"
   dependencies:
@@ -5501,6 +5501,7 @@ __metadata:
     "@remix-run/node": "npm:^2.6.0"
     "@remix-run/react": "npm:^2.6.0"
     "@remix-run/serve": "npm:^2.6.0"
+    "@types/node": "npm:^20.11.19"
     "@types/react": "npm:^18.2.20"
     "@types/react-dom": "npm:^18.2.7"
     eslint: "npm:^8.56.0"
