@@ -9,4 +9,7 @@
     h2 {
         @apply text-3xl py-6 font-extrabold text-cyan-700;
     }
+    .container {
+        @apply p-7 lg:p-20;
+    }
 }
