@@ -4,12 +4,15 @@
 
 @layer base {
     h1 {
-        @apply text-4xl py-8 font-extrabold text-cyan-700;
+        @apply text-8xl py-16 font-extrabold text-cyan-700;
     }
     h2 {
-        @apply text-3xl py-6 font-extrabold text-cyan-700;
+        @apply text-6xl py-12 font-extrabold text-cyan-700;
+    }
+    h3 {
+        @apply text-4xl py-8 font-extrabold text-cyan-700;
     }
     .container {
-        @apply p-7 lg:p-20;
+        @apply p-7 lg:p-20 m-auto;
     }
 }
