@@ -5,16 +5,17 @@ import Card from "~/components/Card";
 
 function HeroSplashscreen() {
     return (
-        <div className={"my-10 flex flex-wrap justify-center"}>
-            <ColoredSection>
+        <div className={"flex flex-wrap"}>
+            <div className={`px-10 lg:px-16 pt-32 pb-20 w-[100%] bg-cyan-100 rounded-b-[40px]`}>
                 <p className={"pb-7 text-8xl lg:text-9xl text-cyan-500 font-extrabold"}>Hey,</p>
                 <p className={"text-6xl lg:text-7xl ml-1 text-cyan-700 font-extrabold pb-10 transition-opacity duration-500"}>
                     I'm Chris
                 </p>
-            </ColoredSection>
-            <ColoredSection width={"w-[90%] md:w-[30%]"}>
-                <img src={"favicon.png"} alt={"profile picture"}/>
-            </ColoredSection>
+                <img className={'m-auto pb-10 max-w-[80%]'} src={"favicon.png"} alt={"profile picture"}/>
+                <Capsule>
+                    Frontend Engineer
+                </Capsule>
+            </div>
         </div>
     );
 }
@@ -24,16 +25,16 @@ function HeroAnimation() {
     const iconList = [
         {'src': 'icons/resume_icon.svg', 'alt': 'view resume'},
         {'src': 'icons/github_icon.svg', 'alt': 'github repository'},
-        {'src': 'icons/resume_icon.svg', 'alt': 'linkedin profile'}
+        {'src': 'icons/linkedin_icon.svg', 'alt': 'linkedin profile'}
     ];
 
     return (
-        <div className={'container py-20 bg-cyan-950'}>
-            <p className={'text-9xl font-black'}>I Create</p>
-            <p>{adjectives[0]}</p>
-            <p>user experiences</p>
-            <div>
-                {iconList.map(icon => <img src={icon.src} alt={icon.alt}/>)}
+        <div className={'container my-20 pt-20 pl-12 pb-14 bg-primary'}>
+            <p className={'mb-5 text-7xl text-cyan-50 font-black'}>I Create</p>
+            <p className={'text-3xl text-[#1CB9D4]'}>{adjectives[0]}</p>
+            <p className={'text-3xl [line-height:1.75rem] text-cyan-50'}>user experiences</p>
+            <div className={'mt-16 flex space-x-5'}>
+                {iconList.map(icon => <img className={'w-10 inline-block'} src={icon.src} alt={icon.alt}/>)}
             </div>
         </div>
     );

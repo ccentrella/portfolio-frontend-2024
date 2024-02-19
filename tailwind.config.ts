@@ -3,7 +3,11 @@ import type { Config } from "tailwindcss";
 export default {
   content: ["./app/**/*.{js,ts}[x]"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#024854'
+      },
+    },
     supports: {
       grid: 'display: grid',
     },
