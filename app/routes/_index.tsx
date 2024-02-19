@@ -23,9 +23,9 @@ function HeroSplashscreen() {
 function HeroAnimation() {
     const adjectives = ['intuitive', 'beautiful', 'colorful', 'custom'];
     const iconList = [
-        {'src': 'icons/resume_icon.svg', 'alt': 'view resume'},
-        {'src': 'icons/github_icon.svg', 'alt': 'github repository'},
-        {'src': 'icons/linkedin_icon.svg', 'alt': 'linkedin profile'}
+        {src: 'icons/resume_icon.svg', alt: 'view resume' },
+        {src: 'icons/github_icon.svg', alt: 'github repository' },
+        {src: 'icons/linkedin_icon.svg', alt: 'linkedin profile' }
     ];
 
     return (
@@ -34,7 +34,7 @@ function HeroAnimation() {
             <p className={'text-3xl text-[#1CB9D4]'}>{adjectives[0]}</p>
             <p className={'text-3xl [line-height:1.75rem] text-cyan-50'}>user experiences</p>
             <div className={'mt-16 flex space-x-5'}>
-                {iconList.map(icon => <img className={'w-10 inline-block'} src={icon.src} alt={icon.alt}/>)}
+                {iconList.map(icon => <img key={icon.src} className={'w-10 inline-block'} src={icon.src} alt={icon.alt}/>)}
             </div>
         </div>
     );
@@ -55,14 +55,17 @@ function CityIllustration() {
 function Recommendations() {
     const recommendationList = [
         {
+            id: 0,
             'name': 'David Yarbrough',
             'recommendation': '&ldquo;When I first met Chris, I was struck by two outstanding qualities: his blazing technical acumen and his relentless pursuit of excellence. In the time that we\'ve worked together I have seen these qualities in action, both in his individual work and in the way that he works with his team: he\'s confident in his own considerable knowledge and abilities, and also conscious of his own limitations and eager to learn from his teammates. He actively seeks out collaboration in a way that helps the entire team improve. He\'s a voracious and thoughtful reader and has a knack for synthesizing data into concrete recommendations, which he then presents to the team to workshop into new solutions.  In short, he\'s an excellent engineer and an excellent teammate, and would improve any team he joined.&rdquo;'
         },
         {
+            id: 1,
             'name': 'Christian Enamorado',
             'recommendation': 'Christopher is one of those rare developers who is willing to go the distance and then some to hone his skills. Given the proper opportunities and guidance that willingness fueled by his optimism will make him a valued member of any team. During my time working with him, he showed time and time again that he wanted to work with others to build something greater.'
         },
         {
+            id: 2,
             'name': 'Sarah Johnson MiddleBrook',
             'recommendation': 'I had the pleasure of hiring and working with Christopher. During the recruiting process, he had so much excitement around the role and the opportunity to move to Nashville. Even better, he had so much eagerness to learn and grow in a new role. He loves to challenge himself. I knew he would fit in great with the SE team at Groups360. Overall, Christopher is a great software engineer with a creative mind. He\'s only a year and a couple months into his professional career, but once you talk to him it seems like he has had 10+ years of experience. Such a smart and fun guy!'
         }
@@ -79,6 +82,7 @@ function Recommendations() {
 function ProfessionalExperience() {
     const professionalExperienceList = [
         {
+            id: 0,
             title: 'SOFTWARE ENGINEER II',
             company: 'Groups360',
             date: '01/23 - PRESENT',
@@ -90,6 +94,7 @@ function ProfessionalExperience() {
             ]
         },
         {
+            id: 1,
             title: 'SOFTWARE DEVELOPER',
             company: 'IBM Consulting',
             date: '06/22 - 12/22',
@@ -101,6 +106,7 @@ function ProfessionalExperience() {
             ]
         },
         {
+            id: 2,
             title: 'SOFTWARE ENGINEER',
             company: 'St. Paul Center',
             date: '01/22 - 05/22 (internship)',
@@ -112,6 +118,7 @@ function ProfessionalExperience() {
             ]
         },
         {
+            id: 3,
             title: 'WEB DEVELOPER',
             company: 'Catholics for Hire',
             date: '06/21 - 03/22 (part time)',
@@ -127,11 +134,11 @@ function ProfessionalExperience() {
     return (
         <div>
             {professionalExperienceList.map(experience => (
-                <div>
+                <div key={experience.id}>
                     <p className={'text-2xl'}>{experience.title}</p>
                     <p className={'text-sm'}>{experience.date}</p>
                     <ul className={'list-item'}>
-                        {experience.accomplishments.map(accomplishment => <li>{accomplishment}</li>)}
+                        {experience.accomplishments.map(accomplishment => <li key={accomplishment}>{accomplishment}</li>)}
                     </ul>
                 </div>
             ))}
@@ -180,20 +187,20 @@ function Qualifications() {
     return (
         <div>
             <Card title={'Education'}>
-                <p>{qualifications.education.degree} Minor in {qualifications.education.minor}</p>
+                <p>{qualifications.education.degree}, Minor in {qualifications.education.minor}</p>
                 <p className={'text-sm'}>{qualifications.education.year} | {qualifications.education.institution}</p>
             </Card>
             <Card title={'Skills'}>
                 {qualifications.skills.map(section => (
-                    <p>{section.name}: {section.skills}</p>
+                    <p key={section.name}>{section.name}: {section.skills}</p>
                 ))}
             </Card>
             <Card title={'Certificates'}>
-                {qualifications.certificates.map(certificate => (<p>{certificate}</p>))}
+                {qualifications.certificates.map(certificate => <p key={certificate}>{certificate}</p>)}
             </Card>
             <Card title={'Awards'}>
                 {qualifications.awards.map(award=> (
-                    <div>
+                    <div key={award.name}>
                         <p>{award.name}</p>
                         <p className={'text-sm'}>{award.description}</p>
                     </div>
