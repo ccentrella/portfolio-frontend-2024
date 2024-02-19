@@ -21,17 +21,32 @@ function HeroSplashscreen() {
 }
 
 function HeroAnimation() {
-    const adjectives = ['intuitive', 'beautiful', 'colorful', 'custom'];
+    const [index, setIndex] = useState(0);
+
+    const adjectives = [
+        {text: 'intuitive', color: '#1CB9D4'},
+        {text: 'beautiful', color: '#D470BE'},
+        {text: 'colorful', color: '#06D4D1'},
+        {text: 'custom', color: '#EBC57A'}
+    ];
+
     const iconList = [
         {src: 'icons/resume_icon.svg', alt: 'view resume' },
         {src: 'icons/github_icon.svg', alt: 'github repository' },
         {src: 'icons/linkedin_icon.svg', alt: 'linkedin profile' }
     ];
 
+    useEffect(() => {
+        const next = setTimeout(() =>
+            setIndex(previous => (previous + 1) % 4), 2000);
+
+        return () => clearTimeout(next);
+    }, [index]);
+
     return (
         <div className={'container my-20 pt-20 pl-12 pb-14 bg-primary'}>
             <p className={'mb-5 text-7xl text-cyan-50 font-black'}>I Create</p>
-            <p className={'text-3xl text-[#1CB9D4]'}>{adjectives[0]}</p>
+            <p className={'text-3xl transition-colors [transition-duration:1s]'} style={{color: adjectives[index].color}}>{adjectives[index].text}</p>
             <p className={'text-3xl [line-height:1.75rem] text-cyan-50'}>user experiences</p>
             <div className={'mt-16 flex space-x-5'}>
                 {iconList.map(icon => <img key={icon.src} className={'w-10 inline-block'} src={icon.src} alt={icon.alt}/>)}
