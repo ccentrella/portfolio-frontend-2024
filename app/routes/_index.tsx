@@ -59,7 +59,7 @@ function HeroAnimation() {
 
 function CityIllustration() {
     return (
-        <div className={'my-16'}>
+        <div className={'mt-16'}>
             <img className={'m-7 mb-12'} src={'city.svg'} alt={'city illustration'}/>
             <Capsule>
                 <img className={'inline w-10 pr-3'} src={'icons/location_icon.svg'} alt={'map icon'}/>
@@ -149,12 +149,13 @@ function ProfessionalExperience() {
     ];
 
     return (
-        <div>
+        <div className={'container pb-0'}>
+            <h2 className={'text-2xl py-5 text-primary'}>Professional Experience</h2>
             {professionalExperienceList.map(experience => (
                 <div key={experience.id}>
-                    <p className={'text-2xl'}>{experience.title}</p>
-                    <p className={'text-sm'}>{experience.date}</p>
-                    <ul className={'list-item'}>
+                    <p className={'text-cyan-700 font-extrabold'}>{experience.title}, {experience.company}</p>
+                    <p className={'text-sm font-light text-gray-500'}>{experience.date}</p>
+                    <ul className={'mt-2.5 mb-5 list-disc list-inside'}>
                         {experience.accomplishments.map(accomplishment => <li key={accomplishment}>{accomplishment}</li>)}
                     </ul>
                 </div>
@@ -202,22 +203,22 @@ function Qualifications() {
     };
 
     return (
-        <div>
+        <div className={'container space-y-5'}>
             <Card title={'Education'}>
-                <p>{qualifications.education.degree}, Minor in {qualifications.education.minor}</p>
-                <p className={'text-sm'}>{qualifications.education.year} | {qualifications.education.institution}</p>
+                <p className={'text-sm mb-1'}>{qualifications.education.degree}, Minor in {qualifications.education.minor}</p>
+                <p className={'text-sm font-light text-gray-400'}>{qualifications.education.year} | {qualifications.education.institution}</p>
             </Card>
             <Card title={'Skills'}>
                 {qualifications.skills.map(section => (
-                    <p key={section.name}>{section.name}: {section.skills}</p>
+                    <p className={'mb-4'} key={section.name}>{section.name}: {section.skills}</p>
                 ))}
             </Card>
             <Card title={'Certificates'}>
-                {qualifications.certificates.map(certificate => <p key={certificate}>{certificate}</p>)}
+                {qualifications.certificates.map(certificate => <p className={'mb-3'} key={certificate}>{certificate}</p>)}
             </Card>
             <Card title={'Awards'}>
                 {qualifications.awards.map(award=> (
-                    <div key={award.name}>
+                    <div className={'mb-4'} key={award.name}>
                         <p>{award.name}</p>
                         <p className={'text-sm'}>{award.description}</p>
                     </div>
@@ -233,7 +234,7 @@ export default function Index() {
             <HeroSplashscreen/>
             <HeroAnimation/>
             <CityIllustration/>
-            <Recommendations/>
+            {/*<Recommendations/>*/}
             <ProfessionalExperience/>
             <Qualifications/>
         </div>
