@@ -59,10 +59,10 @@ function HeroAnimation() {
 
 function CityIllustration() {
     return (
-        <div>
-            <img src={'city.svg'} alt={'city illustration'}/>
+        <div className={'my-16'}>
+            <img className={'m-7 mb-12'} src={'city.svg'} alt={'city illustration'}/>
             <Capsule>
-                <img className={'inline'} src={'icons/location_icon.svg'} alt={'map icon'}/>
+                <img className={'inline w-10 pr-3'} src={'icons/location_icon.svg'} alt={'map icon'}/>
                 <span>Nashville, TN</span>
             </Capsule>
         </div>
