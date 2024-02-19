@@ -2,6 +2,8 @@ import type {MetaFunction} from "@remix-run/node";
 import ColoredSection from "~/components/ColoredSection";
 import Capsule from "~/components/Capsule";
 import Card from "~/components/Card";
+import Carousel from "~/components/Carousel";
+import {useEffect, useState} from "react";
 
 function HeroSplashscreen() {
     return (
@@ -89,7 +91,7 @@ function Recommendations() {
     return (
         <div>
             <p className={'text-3xl text-teal-300'}>Here's what coworkers say</p>
-            {/*TODO: Carousel here*/}
+            <Carousel source={recommendationList} />
         </div>
     );
 }
