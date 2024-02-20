@@ -32,9 +32,9 @@ function HeroAnimation() {
     ];
 
     const iconList = [
-        {src: 'icons/resume_icon.svg', alt: 'view resume'},
-        {src: 'icons/github_icon.svg', alt: 'github repository'},
-        {src: 'icons/linkedin_icon.svg', alt: 'linkedin profile'}
+        {src: 'icons/resume_icon.svg', alt: 'view resume', href: 'resume_chris_centrella_frontend_engineer.pdf'},
+        {src: 'icons/github_icon.svg', alt: 'github repository', href: 'https://github.com/ccentrella'},
+        {src: 'icons/linkedin_icon.svg', alt: 'linkedin profile', href: 'https://linkedin.com/in/ccentrella'}
     ];
 
     useEffect(() => {
@@ -51,8 +51,16 @@ function HeroAnimation() {
                style={{color: adjectives[index].color}}>{adjectives[index].text}</p>
             <p className={'text-3xl [line-height:1.75rem] text-cyan-50'}>user experiences</p>
             <div className={'mt-16 flex space-x-5'}>
-                {iconList.map(icon => <img key={icon.src} className={'w-10 inline-block'} src={icon.src}
-                                           alt={icon.alt}/>)}
+                {iconList.map(icon =>
+                    <a key={icon.src}
+                       className={'inline-block transition-opacity hover:opacity-75'}
+                       href={icon.href}
+                       target={'_blank'}
+                       rel={'_noopener'}>
+                        <img className={'w-10'}
+                             src={icon.src}
+                             alt={icon.alt}/>
+                    </a>)}
             </div>
         </div>
     );
