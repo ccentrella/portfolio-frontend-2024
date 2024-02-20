@@ -205,7 +205,7 @@ function Qualifications() {
                 description: 'Top graduating computer science student'
             },
             {
-                name: 'Distinguished Contributor',
+                name: 'DISTINGUISHED CONTRIBUTOR',
                 description: 'For showing exemplary dedication to Clarifying Catholicism\'s growth'
             }
         ]
@@ -214,7 +214,7 @@ function Qualifications() {
     return (
         <div className={'container space-y-5'}>
             <Card title={'Education'}>
-                <p className={'text-sm mb-1'}>{qualifications.education.degree}, Minor
+                <p className={'text-[0.93rem] mb-1'}>{qualifications.education.degree}, Minor
                     in {qualifications.education.minor}</p>
                 <p className={'text-sm font-light text-gray-400'}>{qualifications.education.year} | {qualifications.education.institution}</p>
             </Card>
@@ -224,14 +224,14 @@ function Qualifications() {
                 ))}
             </Card>
             <Card title={'Certificates'}>
-                {qualifications.certificates.map(certificate => <p className={'mb-3'}
+                {qualifications.certificates.map(certificate => <p className={'mb-4'}
                                                                    key={certificate}>{certificate}</p>)}
             </Card>
             <Card title={'Awards'}>
                 {qualifications.awards.map(award => (
                     <div className={'mb-4'} key={award.name}>
                         <p>{award.name}</p>
-                        <p className={'text-sm'}>{award.description}</p>
+                        <p className={'text-sm font-light text-gray-400'}>{award.description}</p>
                     </div>
                 ))}
             </Card>
