@@ -247,6 +247,55 @@ function Qualifications() {
     )
 }
 
+function About() {
+
+    return (
+        <div>
+            <div className={'container my-16 py-20 bg-rose-900 text-rose-50 space-y-5'}>
+                <h3 className={'text-center text-rose-50 py-5'}>Designer at Heart</h3>
+                <p>In a world marred by brokenness, where is goodness and beauty? What can distract from a painful
+                    childhood? Serve as a mode of self expression? These questions led me to embrace creativity from an
+                    early age. From taking pictures on my compact camera to numerous user interfaces, my creativity
+                    began in childhood.</p>
+                <p>As I’ve navigated the world of design since then, I’ve become especially drawn to the Japanese
+                    concept of Ma or minimalism. From interior design to apps, I firmly believe less is more. Calming
+                    the mind through de-cluttered experiences. Software so intuitive the user experience is in the
+                    background. Following the design philosophy of Steve Jobs to achieve sophistication through
+                    simplicity.</p>
+                <p className={'pt-5 pr-5 text-right'}><a className={'px-8 py-3 bg-rose-50 rounded-3xl text-rose-900'}>About
+                    Me</a></p>
+            </div>
+            <div className={'container my-16 space-y-5'}>
+                <h3 className={'text-center py-5'}>&#123;Build&#125; Software</h3>
+                <p>Over ten years ago, it was my fourteenth birthday. My life was about to change forever. I had
+                    expressed interest in writing code, so my parents bought me an introductory book on Visual Basic.
+                    Over the course of the next few years, I built several apps of increasing complexity and (almost)
+                    never looked back. So began my software engineering journey.</p>
+                <p>One thing I love about software engineering is that you’re building a product. I also love that
+                    software engineering is about solving puzzles: What is the best way to solve this problem? Why is
+                    the code not working? How do I refactor the code to support this feature?</p>
+                <p className={'pt-10 pr-5 text-center'}><a
+                    className={'px-8 py-5 bg-primary rounded-[50px] text-cyan-100'}>Design Principles</a></p>
+            </div>
+            <div className={'container my-16 py-20 bg-teal-900 text-teal-50 space-y-5'}>
+                <h3 className={'text-center text-teal-50 py-5'}>Finding Purpose</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula leo lectus, ut consectetur
+                    diam consequat ut. Fusce dignissim fringilla nisi ac auctor. Mauris malesuada, lectus a malesuada
+                    posuere, leo ipsum tincidunt diam, eget pulvinar urna velit vel risus. Maecenas eu enim quam. Morbi
+                    sit amet tellus quis lacus fermentum imperdiet at sed neque.</p>
+                <p>Pellentesque facilisis lacus nibh, ut posuere mauris sagittis quis. Maecenas nec
+                    ullamcorper tellus, ac aliquet lacus. Vivamus egestas, tortor et egestas sollicitudin, elit lorem
+                    laoreet metus, quis suscipit est ligula in arcu. Duis id varius dolor. In vestibulum sollicitudin
+                    magna
+                    id pulvinar. Nulla euismod mi at urna maximus, eu dignissim ante gravida.</p>
+                <p className={'pt-5 pr-5 text-right'}>
+                    <a className={'px-8 py-3 bg-teal-50 rounded-3xl text-teal-900'}>About Me</a>
+                </p>
+            </div>
+        </div>
+    )
+}
+
 export default function Index() {
     return (
         <div>
@@ -256,6 +305,7 @@ export default function Index() {
             {/*<Recommendations/>*/}
             <ProfessionalExperience/>
             <Qualifications/>
+            <About/>
         </div>
     );
 }
