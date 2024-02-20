@@ -16,3 +16,17 @@
         @apply p-7 lg:p-20 m-auto;
     }
 }
+
+@layer components {
+    .timeline-circle::before {
+        @apply bg-cyan-700;
+        content: "";
+        position: relative;
+        width: 16px;
+        height: 16px;
+        top: 26px;
+        left: -37px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+}

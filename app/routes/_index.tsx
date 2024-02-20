@@ -1,5 +1,4 @@
 import type {MetaFunction} from "@remix-run/node";
-import ColoredSection from "~/components/ColoredSection";
 import Capsule from "~/components/Capsule";
 import Card from "~/components/Card";
 import Carousel from "~/components/Carousel";
@@ -33,9 +32,9 @@ function HeroAnimation() {
     ];
 
     const iconList = [
-        {src: 'icons/resume_icon.svg', alt: 'view resume' },
-        {src: 'icons/github_icon.svg', alt: 'github repository' },
-        {src: 'icons/linkedin_icon.svg', alt: 'linkedin profile' }
+        {src: 'icons/resume_icon.svg', alt: 'view resume'},
+        {src: 'icons/github_icon.svg', alt: 'github repository'},
+        {src: 'icons/linkedin_icon.svg', alt: 'linkedin profile'}
     ];
 
     useEffect(() => {
@@ -48,10 +47,12 @@ function HeroAnimation() {
     return (
         <div className={'container my-20 pt-20 pl-12 pb-14 bg-primary'}>
             <p className={'mb-5 text-7xl text-cyan-50 font-black'}>I Create</p>
-            <p className={'text-3xl transition-colors [transition-duration:1s]'} style={{color: adjectives[index].color}}>{adjectives[index].text}</p>
+            <p className={'text-3xl transition-colors [transition-duration:1s]'}
+               style={{color: adjectives[index].color}}>{adjectives[index].text}</p>
             <p className={'text-3xl [line-height:1.75rem] text-cyan-50'}>user experiences</p>
             <div className={'mt-16 flex space-x-5'}>
-                {iconList.map(icon => <img key={icon.src} className={'w-10 inline-block'} src={icon.src} alt={icon.alt}/>)}
+                {iconList.map(icon => <img key={icon.src} className={'w-10 inline-block'} src={icon.src}
+                                           alt={icon.alt}/>)}
             </div>
         </div>
     );
@@ -91,7 +92,7 @@ function Recommendations() {
     return (
         <div>
             <p className={'text-3xl text-teal-300'}>Here's what coworkers say</p>
-            <Carousel source={recommendationList} />
+            <Carousel source={recommendationList}/>
         </div>
     );
 }
@@ -149,17 +150,25 @@ function ProfessionalExperience() {
     ];
 
     return (
-        <div className={'container pb-0'}>
-            <h2 className={'text-2xl py-5 text-primary'}>Professional Experience</h2>
-            {professionalExperienceList.map(experience => (
-                <div key={experience.id}>
-                    <p className={'text-cyan-700 font-extrabold'}>{experience.title}, {experience.company}</p>
-                    <p className={'text-sm font-light text-gray-500'}>{experience.date}</p>
-                    <ul className={'mt-2.5 mb-5 list-disc list-inside'}>
-                        {experience.accomplishments.map(accomplishment => <li key={accomplishment}>{accomplishment}</li>)}
-                    </ul>
+        <div className={'container'}>
+            <h2 className={'text-2xl pt-5 pb-0 text-primary'}>Professional Experience</h2>
+            <div className={'flex'}>
+                <div className={'border-l-[3px] border-l-cyan-700 ml-1 pl-7 mt-[40px]'}></div>
+                <div>
+                    {professionalExperienceList.map(experience => (
+                        <div className={'timeline-circle'} key={experience.id}>
+                            <p className={'text-cyan-700 text-sm font-extrabold'}>{experience.title}, {experience.company}</p>
+                            <p className={'text-xs font-light text-gray-500'}>{experience.date}</p>
+                            <ul className={'mt-2.5 list-disc list-inside'}>
+                                {experience.accomplishments.map(accomplishment => <li
+                                    key={accomplishment}>{accomplishment}</li>)}
+                            </ul>
+                        </div>
+                    ))}
+                    <div className={'timeline-circle before:top-3 mt-[-32px]'}></div>
                 </div>
-            ))}
+
+            </div>
         </div>
     );
 }
@@ -205,7 +214,8 @@ function Qualifications() {
     return (
         <div className={'container space-y-5'}>
             <Card title={'Education'}>
-                <p className={'text-sm mb-1'}>{qualifications.education.degree}, Minor in {qualifications.education.minor}</p>
+                <p className={'text-sm mb-1'}>{qualifications.education.degree}, Minor
+                    in {qualifications.education.minor}</p>
                 <p className={'text-sm font-light text-gray-400'}>{qualifications.education.year} | {qualifications.education.institution}</p>
             </Card>
             <Card title={'Skills'}>
@@ -214,10 +224,11 @@ function Qualifications() {
                 ))}
             </Card>
             <Card title={'Certificates'}>
-                {qualifications.certificates.map(certificate => <p className={'mb-3'} key={certificate}>{certificate}</p>)}
+                {qualifications.certificates.map(certificate => <p className={'mb-3'}
+                                                                   key={certificate}>{certificate}</p>)}
             </Card>
             <Card title={'Awards'}>
-                {qualifications.awards.map(award=> (
+                {qualifications.awards.map(award => (
                     <div className={'mb-4'} key={award.name}>
                         <p>{award.name}</p>
                         <p className={'text-sm'}>{award.description}</p>
