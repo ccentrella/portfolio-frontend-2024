@@ -1,7 +1,6 @@
 import type {MetaFunction} from "@remix-run/node";
 import Capsule from "~/components/Capsule";
 import Card from "~/components/Card";
-import Carousel from "~/components/Carousel";
 import {useEffect, useState} from "react";
 
 function HeroSplashscreen() {
@@ -79,28 +78,47 @@ function CityIllustration() {
 }
 
 function Recommendations() {
-    const recommendationList = [
+    const [index, setIndex] = useState(0);
+
+    const source = [
         {
             id: 0,
-            'name': 'David Yarbrough',
-            'recommendation': '&ldquo;When I first met Chris, I was struck by two outstanding qualities: his blazing technical acumen and his relentless pursuit of excellence. In the time that we\'ve worked together I have seen these qualities in action, both in his individual work and in the way that he works with his team: he\'s confident in his own considerable knowledge and abilities, and also conscious of his own limitations and eager to learn from his teammates. He actively seeks out collaboration in a way that helps the entire team improve. He\'s a voracious and thoughtful reader and has a knack for synthesizing data into concrete recommendations, which he then presents to the team to workshop into new solutions.  In short, he\'s an excellent engineer and an excellent teammate, and would improve any team he joined.&rdquo;'
+            name: 'David Yarbrough',
+            recommendation: [
+                'When I first met Chris, I was struck by two outstanding qualities: his blazing technical acumen and his relentless pursuit of excellence. In the time that we\'ve worked together I have seen these qualities in action, both in his individual work and in the way that he works with his team: he\'s confident in his own considerable knowledge and abilities, and also conscious of his own limitations and eager to learn from his teammates. He actively seeks out collaboration in a way that helps the entire team improve. He\'s a voracious and thoughtful reader and has a knack for synthesizing data into concrete recommendations, which he then presents to the team to workshop into new solutions.',
+                'In short, he\'s an excellent engineer and an excellent teammate, and would improve any team he joined.'
+            ]
         },
         {
             id: 1,
-            'name': 'Christian Enamorado',
-            'recommendation': 'Christopher is one of those rare developers who is willing to go the distance and then some to hone his skills. Given the proper opportunities and guidance that willingness fueled by his optimism will make him a valued member of any team. During my time working with him, he showed time and time again that he wanted to work with others to build something greater.'
+            name: 'Christian Enamorado',
+            recommendation: [
+                'Christopher is one of those rare developers who is willing to go the distance and then some to hone his skills. Given the proper opportunities and guidance that willingness fueled by his optimism will make him a valued member of any team. During my time working with him, he showed time and time again that he wanted to work with others to build something greater.'
+            ]
         },
         {
             id: 2,
-            'name': 'Sarah Johnson MiddleBrook',
-            'recommendation': 'I had the pleasure of hiring and working with Christopher. During the recruiting process, he had so much excitement around the role and the opportunity to move to Nashville. Even better, he had so much eagerness to learn and grow in a new role. He loves to challenge himself. I knew he would fit in great with the SE team at Groups360. Overall, Christopher is a great software engineer with a creative mind. He\'s only a year and a couple months into his professional career, but once you talk to him it seems like he has had 10+ years of experience. Such a smart and fun guy!'
+            name: 'Sarah Johnson MiddleBrook',
+            recommendation: [
+                'I had the pleasure of hiring and working with Christopher. During the recruiting process, he had so much excitement around the role and the opportunity to move to Nashville. Even better, he had so much eagerness to learn and grow in a new role. He loves to challenge himself. I knew he would fit in great with the SE team at Groups360. Overall, Christopher is a great software engineer with a creative mind. He\'s only a year and a couple months into his professional career, but once you talk to him it seems like he has had 10+ years of experience. Such a smart and fun guy!'
+            ]
         }
     ];
 
+    useEffect(() => {
+        const next = setTimeout(() =>
+            setIndex(previous => (previous + 1) % source.length), 10000);
+
+        return () => clearTimeout(next);
+    }, [index]);
+
     return (
-        <div>
-            <p className={'text-3xl text-teal-300'}>Here's what coworkers say</p>
-            <Carousel source={recommendationList}/>
+        <div className={'py-16 mt-24 container bg-teal-600 text-teal-100'}>
+            <p className={'text-2xl text-teal-100 font-extrabold my-8'}>Here's what coworkers say</p>
+            {source[index].recommendation.map(recommendation => <p className={'my-5'} key={recommendation}>{recommendation}</p>)}
+            <div className={'mt-10 py-5 px-10 bg-teal-900 rounded-[50px] inline-block'}>
+                <p>{source[index].name}</p>
+            </div>
         </div>
     );
 }
@@ -302,7 +320,7 @@ export default function Index() {
             <HeroSplashscreen/>
             <HeroAnimation/>
             <CityIllustration/>
-            {/*<Recommendations/>*/}
+            <Recommendations/>
             <ProfessionalExperience/>
             <Qualifications/>
             <About/>
