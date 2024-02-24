@@ -23,15 +23,8 @@
 
 @layer components {
     .timeline-circle::before {
-        @apply bg-cyan-700;
+        @apply relative w-[16px] h-[16px] top-[26px] left-[-37px] lg:left-[-42px] rounded-[50%] inline-block bg-cyan-700;
         content: "";
-        position: relative;
-        width: 16px;
-        height: 16px;
-        top: 26px;
-        left: -37px;
-        border-radius: 50%;
-        display: inline-block;
     }
 
     .container {
