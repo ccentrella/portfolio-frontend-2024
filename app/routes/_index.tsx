@@ -5,13 +5,15 @@ import {useEffect, useState} from "react";
 
 function HeroSplashscreen() {
     return (
-        <div className={"flex flex-wrap"}>
-            <div className={`px-10 lg:px-16 pt-32 pb-20 w-[100%] bg-cyan-100 rounded-b-[40px]`}>
-                <p className={"pb-7 text-8xl lg:text-9xl text-cyan-500 font-extrabold"}>Hey,</p>
-                <p className={"text-6xl lg:text-7xl ml-1 text-cyan-700 font-extrabold pb-10 transition-opacity duration-500"}>
+        <div className={'flex max-lg:flex-col max-lg:items-center justify-evenly px-10 pt-32 pb-20 w-[100%] min-h-[95dvh] bg-cyan-100 rounded-b-[60px]'}>
+            <div className={'pb-16'}>
+                <p className={"pb-5 text-8xl min-[500px]:text-[12rem] xl:text-[16rem] text-cyan-500 font-extrabold"}>Hey,</p>
+                <p className={"text-6xl min-[500px]:text-7xl ml-1 text-cyan-700 transition-opacity duration-500"}>
                     I'm Chris
                 </p>
-                <img className={'m-auto pb-10 max-w-[80%]'} src={"favicon.png"} alt={"profile picture"}/>
+            </div>
+            <div className={'xl:mt-8 flex flex-col gap-12 lg:gap-16 xl:gap-20 items-center'}>
+                <img className={'max-[499px]:w-72 max-w-[80%]'} src={"favicon.png"} alt={"profile picture"}/>
                 <Capsule>
                     Frontend Engineer
                 </Capsule>
