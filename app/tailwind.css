@@ -12,8 +12,12 @@
     h3 {
         @apply text-4xl py-8 font-extrabold text-cyan-700;
     }
-    .container {
-        @apply p-7 lg:p-20 m-auto;
+
+
+    html {
+        @media screen and (min-width: 1024px) {
+            font-size: 1.2em;
+        }
     }
 }
 
@@ -28,5 +32,9 @@
         left: -37px;
         border-radius: 50%;
         display: inline-block;
+    }
+
+    .container {
+        @apply p-7 lg:px-20 m-auto max-w-[1400px];
     }
 }
