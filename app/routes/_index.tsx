@@ -27,7 +27,8 @@ function HeroAnimation() {
         {text: 'intuitive', color: '#1CB9D4'},
         {text: 'beautiful', color: '#D470BE'},
         {text: 'colorful', color: '#06D4D1'},
-        {text: 'custom', color: '#EBC57A'}
+        {text: 'custom', color: '#EBC57A'},
+        {text: 'user experiences', color: '#FFFFFF'}
     ];
 
     const iconList = [
@@ -37,29 +38,32 @@ function HeroAnimation() {
     ];
 
     useEffect(() => {
-        const next = setTimeout(() =>
-            setIndex(previous => (previous + 1) % 4), 2000);
+        const nextIndex = (index + 1) % adjectives.length;
+        const timeout = nextIndex !== 0 ? 1000 : 5000;
+
+        const next = setTimeout(() => setIndex(nextIndex), timeout);
 
         return () => clearTimeout(next);
     }, [index]);
 
     return (
-        <div className={'container my-20 pt-20 pl-12 pb-14 bg-primary'}>
-            <p className={'mb-5 text-7xl text-cyan-50 font-black'}>I Create</p>
-            <p className={'text-3xl transition-colors [transition-duration:1s]'}
-               style={{color: adjectives[index].color}}>{adjectives[index].text}</p>
-            <p className={'text-3xl [line-height:1.75rem] text-cyan-50'}>user experiences</p>
-            <div className={'mt-16 flex space-x-5'}>
-                {iconList.map(icon =>
-                    <a key={icon.src}
-                       className={'inline-block transition-opacity hover:opacity-75'}
-                       href={icon.href}
-                       target={'_blank'}
-                       rel={'_noopener'}>
-                        <img className={'w-10'}
-                             src={icon.src}
-                             alt={icon.alt}/>
-                    </a>)}
+        <div className={'bg-primary'}>
+            <div className={'container my-20 pt-32 pb-16 lg:pt-40 pl-12'}>
+                <p className={'mb-5 text-7xl text-cyan-50 font-medium'}>
+                    I create <span style={{color: adjectives[index].color}} className={'transition-colors [transition-duration:0.5s]'}>{adjectives[index].text}</span>
+                </p>
+                <div className={'mt-24 lg:mt-32  flex space-x-5'}>
+                    {iconList.map(icon =>
+                        <a key={icon.src}
+                           className={'inline-block transition-opacity hover:opacity-75'}
+                           href={icon.href}
+                           target={'_blank'}
+                           rel={'_noopener'}>
+                            <img className={'w-10'}
+                                 src={icon.src}
+                                 alt={icon.alt}/>
+                        </a>)}
+                </div>
             </div>
         </div>
     );
