@@ -7,7 +7,7 @@ import Section from "~/components/Section";
 function HeroSplashscreen() {
     return (
         <div
-            className={'flex max-lg:flex-col justify-evenly px-12 min-[500px]:px-16 pt-32 pb-20 w-[100%] min-h-[calc(100dvh-48px)] bg-cyan-100 rounded-b-[48px]'}>
+            className={'flex max-lg:flex-col justify-evenly px-12 min-[500px]:px-16 pt-32 pb-20 w-[100%] min-h-[calc(100dvh-50px)] bg-cyan-100 rounded-b-[48px] lg:rounded-b-[96px]'}>
             <div className={'pb-16 self-start'}>
                 <p className={"pb-5 text-8xl min-[500px]:text-[12rem] xl:text-[16rem] text-cyan-500 font-extrabold"}>Hey,</p>
                 <p className={"text-6xl min-[500px]:text-7xl ml-1 text-cyan-700 transition-opacity duration-500"}>
