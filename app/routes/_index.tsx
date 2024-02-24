@@ -159,8 +159,9 @@ function Recommendations() {
     );
 }
 
-function ProfessionalExperience() {
-    const professionalExperienceList = [
+function Resume() {
+
+    const professionalExperience = [
         {
             id: 0,
             title: 'SOFTWARE ENGINEER II',
@@ -211,31 +212,6 @@ function ProfessionalExperience() {
         }
     ];
 
-    return (
-        <div className={'container my-10'}>
-            <h2 className={'text-2xl pt-5 pb-0 text-primary'}>Professional Experience</h2>
-            <div className={'flex'}>
-                <div className={'border-l-[3px] border-l-cyan-700 ml-1 pl-7 mt-[40px]'}></div>
-                <div>
-                    {professionalExperienceList.map(experience => (
-                        <div className={'timeline-circle'} key={experience.id}>
-                            <p className={'text-cyan-700 text-sm font-extrabold'}>{experience.title}, {experience.company}</p>
-                            <p className={'text-xs font-light text-gray-500'}>{experience.date}</p>
-                            <ul className={'mt-2.5 list-disc list-inside'}>
-                                {experience.accomplishments.map(accomplishment => <li
-                                    key={accomplishment}>{accomplishment}</li>)}
-                            </ul>
-                        </div>
-                    ))}
-                    <div className={'timeline-circle before:top-3 mt-[-32px]'}></div>
-                </div>
-
-            </div>
-        </div>
-    );
-}
-
-function Qualifications() {
     const qualifications = {
         education: {
             degree: 'Bachelor of Science in Computer Science',
@@ -274,31 +250,52 @@ function Qualifications() {
     };
 
     return (
-        <div className={'container gap-y-5 flex flex-wrap justify-evenly'}>
-            <Card title={'Education'}>
-                <p className={'mb-1'}>{qualifications.education.degree}, Minor
-                    in {qualifications.education.minor}</p>
-                <p className={'text-sm font-light text-gray-400'}>{qualifications.education.year} | {qualifications.education.institution}</p>
-            </Card>
-            <Card title={'Skills'}>
-                {qualifications.skills.map(section => (
-                    <p className={'mb-4'} key={section.name}>{section.name}: {section.skills}</p>
-                ))}
-            </Card>
-            <Card title={'Certificates'}>
-                {qualifications.certificates.map(certificate => <p className={'mb-4'}
-                                                                   key={certificate}>{certificate}</p>)}
-            </Card>
-            <Card title={'Awards'}>
-                {qualifications.awards.map(award => (
-                    <div className={'mb-4'} key={award.name}>
-                        <p>{award.name}</p>
-                        <p className={'text-sm font-light text-gray-400'}>{award.description}</p>
-                    </div>
-                ))}
-            </Card>
+        <div className={'container my-10'}>
+            <h2 className={'text-2xl pt-5 pb-0 text-primary'}>Professional Experience</h2>
+            <div className={'flex'}>
+                <div className={'border-l-[3px] border-l-cyan-700 ml-1 pl-7 mt-[40px]'}></div>
+                <div>
+                    {professionalExperience.map(experience => (
+                        <div className={'timeline-circle'} key={experience.id}>
+                            <p className={'text-cyan-700 text-sm font-extrabold'}>{experience.title}, {experience.company}</p>
+                            <p className={'text-xs font-light text-gray-500'}>{experience.date}</p>
+                            <ul className={'mt-2.5 list-disc list-inside'}>
+                                {experience.accomplishments.map(accomplishment => <li
+                                    key={accomplishment}>{accomplishment}</li>)}
+                            </ul>
+                        </div>
+                    ))}
+                    <div className={'timeline-circle before:top-3 mt-[-32px]'}></div>
+                </div>
+            </div>
+            <h2 className={'text-2xl pt-16 pb-10 text-primary'}>Qualifications</h2>
+            <div className={'gap-y-5 flex flex-wrap justify-between'}>
+
+                <Card title={'Skills'}>
+                    {qualifications.skills.map(section => (
+                        <p className={'mb-4'} key={section.name}>{section.name}: {section.skills}</p>
+                    ))}
+                </Card>
+                <Card title={'Education'}>
+                    <p className={'mb-1'}>{qualifications.education.degree}, Minor
+                        in {qualifications.education.minor}</p>
+                    <p className={'text-sm font-light text-gray-400'}>{qualifications.education.year} | {qualifications.education.institution}</p>
+                </Card>
+                <Card title={'Certificates'}>
+                    {qualifications.certificates.map(certificate => <p className={'mb-4'}
+                                                                       key={certificate}>{certificate}</p>)}
+                </Card>
+                <Card title={'Awards'}>
+                    {qualifications.awards.map(award => (
+                        <div className={'mb-4'} key={award.name}>
+                            <p>{award.name}</p>
+                            <p className={'text-sm font-light text-gray-400'}>{award.description}</p>
+                        </div>
+                    ))}
+                </Card>
+            </div>
         </div>
-    )
+    );
 }
 
 function About() {
@@ -355,8 +352,7 @@ export default function Index() {
             <HeroAnimation/>
             <CityIllustration/>
             <Recommendations/>
-            <ProfessionalExperience/>
-            <Qualifications/>
+            <Resume/>
             <About/>
         </div>
     );
