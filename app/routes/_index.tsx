@@ -186,7 +186,7 @@ function ProfessionalExperience() {
     ];
 
     return (
-        <div className={'container'}>
+        <div className={'container my-10'}>
             <h2 className={'text-2xl pt-5 pb-0 text-primary'}>Professional Experience</h2>
             <div className={'flex'}>
                 <div className={'border-l-[3px] border-l-cyan-700 ml-1 pl-7 mt-[40px]'}></div>
@@ -248,9 +248,9 @@ function Qualifications() {
     };
 
     return (
-        <div className={'container space-y-5'}>
+        <div className={'container gap-y-5 flex flex-wrap justify-evenly'}>
             <Card title={'Education'}>
-                <p className={'text-[0.93rem] mb-1'}>{qualifications.education.degree}, Minor
+                <p className={'mb-1'}>{qualifications.education.degree}, Minor
                     in {qualifications.education.minor}</p>
                 <p className={'text-sm font-light text-gray-400'}>{qualifications.education.year} | {qualifications.education.institution}</p>
             </Card>
