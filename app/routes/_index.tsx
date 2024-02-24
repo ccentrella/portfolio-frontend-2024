@@ -120,11 +120,14 @@ function Recommendations() {
     }, [index]);
 
     return (
-        <div className={'py-16 mt-24 container bg-teal-600 text-teal-100'}>
-            <p className={'text-2xl text-teal-100 font-extrabold my-8'}>Here's what coworkers say</p>
-            {source[index].recommendation.map(recommendation => <p className={'my-5'} key={recommendation}>{recommendation}</p>)}
-            <div className={'mt-10 py-5 px-10 bg-teal-900 rounded-[50px] inline-block'}>
-                <p>{source[index].name}</p>
+        <div className={'bg-teal-600 '}>
+            <div className={'py-16 lg:py-32 mt-24 container text-teal-100'}>
+                <p className={'text-2xl text-teal-100 font-extrabold my-8'}>Here's what coworkers say</p>
+                {source[index].recommendation.map(recommendation => <p className={'my-5'}
+                                                                       key={recommendation}>{recommendation}</p>)}
+                <div className={'mt-10 py-5 px-10 bg-teal-900 rounded-[50px] inline-block'}>
+                    <p>{source[index].name}</p>
+                </div>
             </div>
         </div>
     );
