@@ -290,9 +290,6 @@ function About() {
                     the mind through de-cluttered experiences. Software so intuitive the user experience is in the
                     background. Following the design philosophy of Steve Jobs to achieve sophistication through
                     simplicity.</p>
-                <p className={'pt-5 pr-5 text-right'}>
-                    <a className={'px-8 py-3 bg-rose-50 rounded-3xl text-rose-900'}>About Me</a>
-                </p>
             </Section>
             <Section title={'\{Build\} Software'} backgroundColor={'bg-transparent'} textColor={'text-primary'}>
                 <p>Over ten years ago, it was my fourteenth birthday. My life was about to change forever. I had
@@ -320,9 +317,6 @@ function About() {
                     sollicitudin
                     magna
                     id pulvinar. Nulla euismod mi at urna maximus, eu dignissim ante gravida.</p>
-                <p className={'pt-5 pr-5 text-right'}>
-                    <a className={'px-8 py-3 bg-teal-50 rounded-3xl text-teal-900'}>About Me</a>
-                </p>
             </Section>
         </div>
     )
