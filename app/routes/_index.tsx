@@ -75,7 +75,7 @@ function HeroAnimation() {
 function CityIllustration() {
     return (
         <div className={'mt-16'}>
-            <img className={'m-7 mb-12'} src={'city.svg'} alt={'city illustration'}/>
+            <img className={'p-7 mb-12 lg:max-w-[750px] m-auto'} src={'city.svg'} alt={'city illustration'}/>
             <Capsule>
                 <img className={'inline w-10 pr-3'} src={'icons/location_icon.svg'} alt={'map icon'}/>
                 <span>Nashville, TN</span>
