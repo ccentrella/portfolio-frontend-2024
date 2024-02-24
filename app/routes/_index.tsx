@@ -41,7 +41,7 @@ function HeroAnimation() {
 
     useEffect(() => {
         const nextIndex = (index + 1) % adjectives.length;
-        const timeout = nextIndex !== 0 ? 1000 : 5000;
+        const timeout = nextIndex !== 0 ? 1500 : 4500;
 
         const next = setTimeout(() => setIndex(nextIndex), timeout);
 
@@ -52,7 +52,8 @@ function HeroAnimation() {
         <div className={'bg-primary'}>
             <div className={'container my-20 pt-32 pb-16 lg:pt-40 pl-12'}>
                 <p className={'mb-5 text-7xl text-cyan-50 font-medium'}>
-                    I create <span style={{color: adjectives[index].color}} className={'transition-colors [transition-duration:0.5s]'}>{adjectives[index].text}</span>
+                    I create <span style={{color: adjectives[index].color}}
+                                   className={'transition-colors [transition-duration:1s]'}>{adjectives[index].text}</span>
                 </p>
                 <div className={'mt-24 lg:mt-32  flex space-x-5'}>
                     {iconList.map(icon =>
