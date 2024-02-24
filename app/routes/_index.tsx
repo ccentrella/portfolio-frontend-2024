@@ -23,6 +23,7 @@ function HeroSplashscreen() {
 }
 
 function HeroAnimation() {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 750);
     const [index, setIndex] = useState(0);
 
     const adjectives = [
@@ -32,7 +33,6 @@ function HeroAnimation() {
         {text: 'custom', color: '#EBC57A'},
         {text: 'user experiences', color: '#FFFFFF'}
     ];
-
     const iconList = [
         {src: 'icons/resume_icon.svg', alt: 'view resume', href: 'resume_chris_centrella_frontend_engineer.pdf'},
         {src: 'icons/github_icon.svg', alt: 'github repository', href: 'https://github.com/ccentrella'},
@@ -40,21 +40,47 @@ function HeroAnimation() {
     ];
 
     useEffect(() => {
-        const nextIndex = (index + 1) % adjectives.length;
-        const timeout = nextIndex !== 0 ? 1500 : 4500;
+        window.addEventListener('resize', () => setIsMobile(window.innerWidth < 750));
+
+        return window.removeEventListener('resize', () => setIsMobile(window.innerWidth < 750));
+    }, []);
+
+    useEffect(() => {
+
+        if (isMobile && index + 1 === adjectives.length) {
+            setIndex(0);
+        }
+
+        const count = isMobile ? adjectives.length - 1 : adjectives.length
+        const nextIndex = (index + 1) % count;
+        const timeout = nextIndex !== 0 || isMobile ? 1500 : 4500;
 
         const next = setTimeout(() => setIndex(nextIndex), timeout);
 
         return () => clearTimeout(next);
-    }, [index]);
+    }, [index, isMobile]);
+
+
+    const bodyText = isMobile ?
+        (
+            <div>
+                <p className={'mb-5 text-7xl text-cyan-50 font-black'}>I Create</p>
+                <p className={'text-4xl transition-colors [transition-duration:1s]'}
+                   style={{color: adjectives[index].color}}>{adjectives[index].text}</p>
+                <p className={'text-4xl [line-height:1.75rem] text-cyan-50'}>user experiences</p>
+            </div>
+        ) :
+        (
+            <p className={'mb-5 text-7xl text-cyan-50 font-medium'}>
+                I create <span style={{color: adjectives[index].color}}
+                               className={'transition-colors [transition-duration:1s]'}>{adjectives[index].text}</span>
+            </p>
+        )
 
     return (
         <div className={'bg-primary'}>
-            <div className={'container my-20 pt-32 pb-16 lg:pt-40 pl-12'}>
-                <p className={'mb-5 text-7xl text-cyan-50 font-medium'}>
-                    I create <span style={{color: adjectives[index].color}}
-                                   className={'transition-colors [transition-duration:1s]'}>{adjectives[index].text}</span>
-                </p>
+            <div className={'container my-20 pt-32 lg:pt-48 pb-16 pl-12 lg:pl-48'}>
+                {bodyText}
                 <div className={'mt-24 lg:mt-32  flex space-x-5'}>
                     {iconList.map(icon =>
                         <a key={icon.src}
