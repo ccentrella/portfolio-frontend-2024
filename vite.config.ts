@@ -15,4 +15,9 @@ export default defineConfig({
             ignoredRouteFiles: ["**/.*"],
             ssr: false
         }), tsconfigPaths()],
+    css: {
+        modules: {
+            localsConvention: "camelCase"
+        }
+    }
 });

@@ -1,0 +1,4 @@
+.timeline-circle::before {
+    @apply relative w-[16px] h-[16px] top-[26px] left-[-37px] lg:left-[-42px] rounded-[50%] inline-block bg-cyan-700;
+    content: "";
+}
