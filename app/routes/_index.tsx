@@ -3,6 +3,8 @@ import Capsule from "~/components/Capsule";
 import {useEffect, useState} from "react";
 import Section from "~/components/Section";
 import Resume from "~/components/resume/Resume";
+import Card from "~/components/Card";
+import Expander from "~/components/Expander";
 
 function HeroSplashscreen() {
     return (
@@ -183,9 +185,21 @@ function About() {
                 <p>One thing I love about software engineering is that you’re building a product. I also love that
                     software engineering is about solving puzzles: What is the best way to solve this problem? Why is
                     the code not working? How do I refactor the code to support this feature?</p>
-                <p className={'pt-10 pr-5 text-center'}>
-                    <a className={'px-8 py-5 bg-primary rounded-[50px] text-cyan-100'}>Design Principles</a>
-                </p>
+                <br/>
+                <Expander title={'Design Principles'}>
+                    <p className={'py-5 text-lg font-bold'}>Engineering</p>
+                    <p>Build modular, reusable components reducing cost and complexity</p>
+                    <p>Write readable, maintainable code to clearly express intent</p>
+                    <p>Create phenomenal developer experience through simple, repeatable processes</p>
+                    <p>Design enjoyable, inclusive, accessible user experiences</p>
+                    <p>Understand potential tradeoffs and explain reasoning for architectural decisions</p>
+                    <p>Continuously refactor to retain developer velocity through maintainable codebase</p>
+
+                    <p className={'py-5 text-lg font-bold'}>Business</p>
+                    <p>Incorporate feedback from stakeholders by collaborating early and often</p>
+                    <p>Incrementally build, deploy, modify through super short feedback loops</p>
+                    <p>Thoroughly understand the business and the problem it solves</p>
+                </Expander>
             </Section>
             <Section title={'Finding Purpose'} backgroundColor={'bg-teal-900'} textColor={'text-teal-50'}>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula leo lectus, ut consectetur
