@@ -25,4 +25,13 @@
     .container {
         @apply p-7 lg:px-20 m-auto max-w-[1400px];
     }
+    .navbar {
+        @apply hidden transition-all max-md:space-y-5 max-md:py-8 md:flex md:gap-7 max-md:basis-[80%] text-sm;
+    }
+    .navbar-toggle {
+        @apply hidden;
+    }
+    .navbar-toggle:checked ~ .navbar {
+        @apply max-md:block;
+    }
 }
