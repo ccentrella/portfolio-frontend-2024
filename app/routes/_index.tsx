@@ -10,15 +10,15 @@ function Hero() {
                 <p className={'text-3xl max-w-[900px] my-5 mb-20'}>I'm an avid software engineer, obsessive problem
                     solver, and developer advocate.</p>
                 <div className={'flex flex-wrap gap-5 justify-between'}>
-                    {/*<Card tag={'Developer Experience'}>*/}
-                    {/*    Led effort to upgrade react pipeline, improving developer experience by 50%.*/}
-                    {/*    <div>*/}
+                    <Card tag={'Developer Experience'}>
+                        Led effort to upgrade react pipeline, improving developer experience by 50%.
+                        <div>
 
-                    {/*    </div>*/}
-                    {/*</Card>*/}
-                    {/*<Card tag={'Maintainability'}>*/}
-                    {/*    Refactored existing React components, reducing time to update by 500%.*/}
-                    {/*</Card>*/}
+                        </div>
+                    </Card>
+                    <Card tag={'Maintainability'}>
+                        Refactored existing React components, reducing time to update by 500%.
+                    </Card>
                 </div>
             </div>
         </div>
