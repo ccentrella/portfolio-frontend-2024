@@ -3,17 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-    h1 {
-        @apply text-8xl py-16 font-extrabold text-cyan-700;
-    }
-    h2 {
-        @apply text-6xl py-12 font-extrabold text-cyan-700;
-    }
-    h3 {
-        @apply text-4xl py-8 font-extrabold text-cyan-700;
-    }
+    /*h1 {*/
+    /*    @apply text-8xl py-16 font-extrabold text-cyan-700;*/
+    /*}*/
+    /*h2 {*/
+    /*    @apply text-6xl py-12 font-extrabold text-cyan-700;*/
+    /*}*/
+    /*h3 {*/
+    /*    @apply text-4xl py-8 font-extrabold text-cyan-700;*/
+    /*}*/
 
     html {
+        @apply bg-background text-white;
         @media screen and (min-width: 1024px) {
             font-size: 1.2em;
         }
