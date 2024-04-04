@@ -4,23 +4,18 @@ import Card from "~/components/Card";
 
 function Hero() {
     return (
-        <div>
-            <div className={'container bg-no-repeat'}>
-                <h1 className={'text-7xl mt-32 mb-5'}>Hey, my name is Chris.</h1>
-                <p className={'text-3xl max-w-[900px] my-5 mb-20'}>I'm an avid software engineer, obsessive problem
-                    solver, and developer advocate.</p>
-                <div className={'flex flex-wrap gap-5 justify-between'}>
-                    <Card tag={'Developer Experience'}>
-                        Led effort to upgrade react pipeline, improving developer experience by 50%.
-                        <div>
-
-                        </div>
-                    </Card>
-                    <Card tag={'Maintainability'}>
-                        Refactored existing React components, reducing time to update by 500%.
-                    </Card>
+        <div className={'h-[90vh]'}>
+            <div className={'bg-cyan-700 h-2'}></div>
+                <div className={'flex gap-x-16 my-32 h-[45vh] justify-evenly *:h-[100%]'}>
+                    <div
+                        className={'inline-block w-3/5 lg:w-1/2 p-24 bg-[#011C26] rounded-xl rounded-tl-[3rem] rounded-br-[3rem]'}>
+                        <h1 className={'text-5xl mb-5'}>Hey, I'm Chris.</h1>
+                        <p className={'text-2xl max-w-[900px] my-5'}>I build software, solve problems, and design user
+                            experiences.</p>
+                    </div>
+                    <img src={'profile.png'} alt={'profile picture'}/>
                 </div>
-            </div>
+
         </div>
     );
 }
@@ -79,17 +74,24 @@ function ProfessionalExperience() {
     ];
 
     return (
-        <div></div>
+        <div className={'container flex flex-wrap gap-5 justify-between'}>
+            <Card tag={'Developer Experience'}>
+                Led effort to upgrade react pipeline, improving developer experience by 50%.
+            </Card>
+            <Card tag={'Maintainability'}>
+                Refactored existing React components, reducing time to update by 500%.
+            </Card>
+        </div>
     )
 }
 
 function Index() {
-  return (
-      <div>
-          <Hero />
-          <ProfessionalExperience />
-      </div>
-  )
+    return (
+        <div className={'bg-cyan-950'}>
+            <Hero/>
+            <ProfessionalExperience/>
+        </div>
+    )
 }
 
 export default Index;
