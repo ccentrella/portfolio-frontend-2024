@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "@remix-run/react";
 
 function Header() {
 
@@ -46,10 +47,10 @@ function Header() {
             </label>
             <input id={'navbar-toggle'} className={'navbar-toggle'} type={'checkbox'}/>
             <div className={'navbar'}>
-                <p><a href="/">Experience</a></p>
-                <p><a href="/interests">Interests</a></p>
-                <p><a href="/blog">Blog</a></p>
-                <p><a href="/contact">Contact</a></p>
+                <p><Link to="/">Experience</Link></p>
+                <p><Link to="/interests">Interests</Link></p>
+                <p><Link to="/blog">Blog</Link></p>
+                <p><Link to="/contact">Contact</Link></p>
             </div>
         </div>
     );
