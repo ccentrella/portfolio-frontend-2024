@@ -73,7 +73,7 @@ function ProfessionalExperience() {
     ];
 
     return (
-        <div className={'container flex flex-wrap gap-5 justify-between'}>
+        <div className={'container flex flex-wrap my-16 justify-between'}>
             <Card tag={'Developer Experience'}>
                 Led effort to upgrade react pipeline, improving developer experience by 50%.
             </Card>
@@ -120,7 +120,7 @@ function Recommendations() {
     }, [index]);
 
     return (
-        <div className={'flex justify-center mt-24'}>
+        <div className={'flex justify-center'}>
             <div className={'bg-cyan-800 max-w-[80%] rounded-3xl'}>
                 <div className={'py-16 lg:py-24 container text-teal-100'}>
                     <p className={'text-4xl text-teal-100 font-medium my-8 text-center'}>Here's what coworkers say</p>
