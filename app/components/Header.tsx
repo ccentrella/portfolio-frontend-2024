@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "@remix-run/react";
+import {NavLink} from "@remix-run/react";
 
 function Header() {
 
@@ -34,7 +34,7 @@ function Header() {
     });
 
     return (
-        <div className={'px-7 py-4 bg-[#023142] flex flex-wrap justify-between items-center'}>
+        <header className={'px-7 py-4 bg-[#023142] flex flex-wrap justify-between items-center'}>
             <div className={'flex items-center gap-3'}>
                 <a href="/"><img src={'./favicon.png'} alt={'profile picture logo'} className={'w-10'}/></a>
                 <p className={'text-cyan-100 md:hidden'}>Experience</p>
@@ -46,13 +46,13 @@ function Header() {
                 <img src={'./icons/menu.svg'} alt={'menu button'} className={'w-8 cursor-pointer'}/>
             </label>
             <input id={'navbar-toggle'} className={'navbar-toggle'} type={'checkbox'}/>
-            <div className={'navbar'}>
-                <p><Link to="/">Experience</Link></p>
-                <p><Link to="/interests">Interests</Link></p>
-                <p><Link to="/blog">Blog</Link></p>
-                <p><Link to="/contact">Contact</Link></p>
-            </div>
-        </div>
+            <nav className={'navbar'}>
+                <p><NavLink to="/">Experience</NavLink></p>
+                <p><NavLink to="/interests">Interests</NavLink></p>
+                <p><NavLink to="/blog">Blog</NavLink></p>
+                <p><NavLink to="/contact">Contact</NavLink></p>
+            </nav>
+        </header>
     );
 }
 

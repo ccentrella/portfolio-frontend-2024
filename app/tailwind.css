@@ -40,3 +40,7 @@
 footer nav .active {
     @apply text-gray-400;
 }
+
+header nav .active {
+    @apply text-gray-400;
+}
