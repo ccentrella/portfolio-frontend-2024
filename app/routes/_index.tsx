@@ -4,7 +4,7 @@ import Card from "~/components/Card";
 
 function Hero() {
     return (
-        <div className={'h-[90vh]'}>
+        <div className={'h-[90vh] bg-[url("/mountain_background.png")] bg-cover'}>
             <div className={'bg-cyan-700 h-2'}></div>
                 <div className={'flex gap-x-16 my-32 h-[45vh] justify-evenly *:h-[100%]'}>
                     <div
