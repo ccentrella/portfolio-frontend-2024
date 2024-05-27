@@ -120,10 +120,10 @@ function Recommendations() {
     }, [index]);
 
     return (
-        <div className={'flex justify-center'}>
+        <div className={'flex justify-center my-16'}>
             <div className={'bg-cyan-800 max-w-[80%] rounded-3xl'}>
-                <div className={'py-16 lg:py-24 container text-teal-100'}>
-                    <p className={'text-4xl text-teal-100 font-medium my-8 text-center'}>Here's what coworkers say</p>
+                <div className={'py-16 lg:py-24 container text-cyan-100'}>
+                    <p className={'text-4xl text-cyan-100 font-medium my-8 text-center'}>Here's what coworkers say</p>
                     {source[index].recommendation.map(recommendation => <p className={'my-5'}
                                                                            key={recommendation}>{recommendation}</p>)}
                     <div className={'mt-10 py-5 px-10 bg-cyan-500 rounded-[50px] inline-block'}>
@@ -135,12 +135,42 @@ function Recommendations() {
     );
 }
 
+function DesignerAtHeart() {
+    return (
+        <div className={'flex justify-center my-16'}>
+            <div className={'bg-red-950/60 max-w-[80%] rounded-3xl'}>
+                <div className={'py-16 lg:py-24 container text-rose-100 space-y-4'}>
+                    <p className={'text-4xl text-rose-100 font-medium my-8 text-center'}>Designer At Heart</p>
+                    <p>In a world marred by brokenness, where is goodness and beauty? What can distract from a painful childhood? Serve as a mode of self expression? These questions led me to embrace creativity from an early age. From taking pictures on my compact camera to numerous user interfaces, my creativity began in childhood.</p>
+                    <p>As I’ve navigated the world of design since then, I’ve become especially drawn to the Japanese concept of Ma or minimalism. From interior design to apps,I firmly believe less is more. Calming the mind through de-cluttered experiences. Software so intuitive the user experience is in the background. Following the design philosophy of Steve Jobs to achieve sophistication through simplicity.</p>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function BuildingSoftware() {
+    return (
+        <div className={'flex justify-center my-16'}>
+            <div className={'bg-teal-800/60 max-w-[80%] rounded-3xl'}>
+                <div className={'py-16 lg:py-24 container text-teal-100 space-y-4'}>
+                    <p className={'text-4xl text-teal-100 font-medium my-8 text-center'}>&#123;Build&#125;ing Software</p>
+                    <p>Over ten years ago, it was my fourteenth birthday. My life was about to change forever. I had expressed interest in writing code, so my parents bought me an introductory book on Visual Basic. Over the course of the next few years, I built several apps of increasing complexity and (almost) never looked back. So began my software engineering journey.</p>
+                    <p>One thing I love about software engineering is that you’re building a product. I also love that software engineering is about solving puzzles: What is the best way to solve this problem? Why is the code not working? How do I refactor the code to support this feature?</p>
+                </div>
+            </div>
+        </div>
+    );
+}
+
 function Index() {
     return (
-        <div className={'bg-cyan-950'}>
+        <div>
             <Hero/>
             <ProfessionalExperience/>
             <Recommendations />
+            <DesignerAtHeart />
+            <BuildingSoftware />
         </div>
     )
 }
