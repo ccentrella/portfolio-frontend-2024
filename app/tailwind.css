@@ -36,3 +36,7 @@
         @apply max-md:block;
     }
 }
+
+footer nav .active {
+    @apply text-gray-400;
+}
