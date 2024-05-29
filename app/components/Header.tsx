@@ -33,6 +33,33 @@ function Header() {
         ) : image;
     });
 
+    const navItemList = [
+        {
+            id: 0,
+            to: '/',
+            title: 'Experience',
+        },
+        {
+            id: 1,
+            to: '/interests',
+            title: 'Interests',
+        },
+        {
+            id: 0,
+            to: '/blog',
+            title: 'Blog',
+        },
+        {
+            id: 0,
+            to: '/contact',
+            title: 'Contact',
+        }
+    ];
+    const navItems = navItemList.map(navItem =>
+        <p className={'text-base'}>
+            <NavLink to={navItem.to}>{navItem.title}</NavLink>
+        </p>);
+
     return (
         <header className={'px-7 py-4 bg-[#023142] flex flex-wrap justify-between items-center'}>
             <div className={'flex items-center gap-3'}>
@@ -47,10 +74,7 @@ function Header() {
             </label>
             <input id={'navbar-toggle'} className={'navbar-toggle'} type={'checkbox'}/>
             <nav className={'navbar'}>
-                <p><NavLink to="/">Experience</NavLink></p>
-                <p><NavLink to="/interests">Interests</NavLink></p>
-                <p><NavLink to="/blog">Blog</NavLink></p>
-                <p><NavLink to="/contact">Contact</NavLink></p>
+                {navItems}
             </nav>
         </header>
     );
