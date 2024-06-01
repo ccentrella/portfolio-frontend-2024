@@ -1,14 +1,13 @@
 import React from 'react';
 
-function Section({backgroundColor, textColor, title, children}) {
-    const isTransparent = backgroundColor === 'bg-transparent';
-    const padding = isTransparent ? 'pb-20' : 'py-28 lg:py-32';
-
+function Section({textColor, backgroundColor, title, children}) {
     return (
-        <div className={`${backgroundColor} my-16`}>
-            <div className={`container ${padding} space-y-5 ${textColor} text-lg max-w-[1000]`}>
-                <h2 className={`text-center ${textColor} pt-0 pb-5 text-4xl font-normal`}>{title}</h2>
-                {children}
+        <div className={'flex justify-center my-16'}>
+            <div className={`${backgroundColor} p-7 lg:px-20 m-auto max-w-[80%] rounded-3xl`}>
+                <div className={`py-16 lg:py-28 ${textColor} space-y-4`}>
+                    <p className={`text-4xl text-${textColor}-100 font-medium mb-8 text-center`}>{title}</p>
+                    {children}
+                </div>
             </div>
         </div>
     );
