@@ -24,7 +24,7 @@ function Header() {
         }
     ];
     const icons = iconList.map(icon => {
-        const image = <img src={icon.src} alt={icon.alt} className={'w-7 rounded p-[0.32rem] bg-[#113D4D] hover:bg-cyan-800 transition-colors'}/>;
+        const image = <img key={icon.id} src={icon.src} alt={icon.alt} className={'w-7 rounded p-[0.32rem] bg-[#113D4D] hover:bg-cyan-800 transition-colors'}/>;
 
         return icon.href ? (
             <a key={icon.id} href={icon.href} rel={'noopener'} target={'_blank'}>
@@ -45,18 +45,18 @@ function Header() {
             title: 'Interests',
         },
         {
-            id: 0,
+            id: 2,
             to: '/blog',
             title: 'Blog',
         },
         {
-            id: 0,
+            id: 3,
             to: '/contact',
             title: 'Contact',
         }
     ];
     const navItems = navItemList.map(navItem =>
-        <p className={'text-base'}>
+        <p key={navItem.id} className={'text-base'}>
             <NavLink to={navItem.to}>{navItem.title}</NavLink>
         </p>);
 
