@@ -106,13 +106,6 @@ function Recommendations() {
             recommendation: [
                 'Christopher is one of those rare developers who is willing to go the distance and then some to hone his skills. Given the proper opportunities and guidance that willingness fueled by his optimism will make him a valued member of any team. During my time working with him, he showed time and time again that he wanted to work with others to build something greater.'
             ]
-        },
-        {
-            id: 2,
-            name: 'Sarah Johnson MiddleBrook',
-            recommendation: [
-                'I had the pleasure of hiring and working with Christopher. During the recruiting process, he had so much excitement around the role and the opportunity to move to Nashville. Even better, he had so much eagerness to learn and grow in a new role. He loves to challenge himself. I knew he would fit in great with the SE team at Groups360. Overall, Christopher is a great software engineer with a creative mind. He\'s only a year and a couple months into his professional career, but once you talk to him it seems like he has had 10+ years of experience. Such a smart and fun guy!'
-            ]
         }
     ];
 
