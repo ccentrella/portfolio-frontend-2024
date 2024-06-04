@@ -9,9 +9,9 @@ function Hero() {
             <div className={'bg-cyan-700 h-2'}></div>
             <div className={'flex flex-wrap gap-16 my-32 justify-evenly *:max-sm:basis-3/4 *:max-md:basis-[60%] *:max-lg:basis-[40%]'}>
                 <div
-                    className={'inline-block w-3/5 lg:w-1/2 p-12 lg:p-24 bg-[#011C26] rounded-xl rounded-tl-[3rem] rounded-br-[3rem]'}>
-                    <h1 className={'text-3xl lg:text-5xl mb-5'}>Hey, I'm Chris.</h1>
-                    <p className={'text-xl lg:text-2xl max-w-[900px] my-5'}>I build software, solve problems, and design
+                    className={'inline-block w-3/5 p-12 bg-[#011C26] rounded-xl rounded-tl-[3rem] rounded-br-[3rem] lg:w-1/2 lg:p-24'}>
+                    <h1 className={'text-3xl mb-5 lg:text-5xl'}>Hey, I'm Chris.</h1>
+                    <p className={'text-xl max-w-[900px] my-5 lg:text-2xl'}>I build software, solve problems, and design
                         user
                         experiences.</p>
                 </div>
@@ -118,8 +118,8 @@ function Recommendations() {
 
     return (
         <div className={'flex justify-center my-16'}>
-            <div className={'bg-cyan-800 p-7 lg:px-20 m-auto max-w-[80%] rounded-3xl'}>
-                <div className={'py-16 lg:py-24 text-cyan-100'}>
+            <div className={'bg-cyan-800 p-7 m-auto max-w-[80%] rounded-3xl lg:px-20'}>
+                <div className={'py-16 text-cyan-100 lg:py-24'}>
                     <p className={'text-4xl text-cyan-100 font-medium my-8 text-center'}>Here's what coworkers say</p>
                     {source[index].recommendation.map(recommendation => <p className={'my-5'}
                                                                            key={recommendation}>{recommendation}</p>)}
