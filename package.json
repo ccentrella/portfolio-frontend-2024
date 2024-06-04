@@ -1,5 +1,7 @@
 {
   "name": "portfolio-frontend-2024",
+  "author": "Christopher Centrella",
+  "description": "2024 personal portfolio",
   "private": true,
   "sideEffects": false,
   "type": "module",
