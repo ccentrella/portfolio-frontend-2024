@@ -3,7 +3,7 @@
 /.pnp.loader.mjs
 
 /.cache
-/build
+/.build
 /public/build
 .env
 

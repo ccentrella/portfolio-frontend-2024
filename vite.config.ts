@@ -6,12 +6,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 installGlobals();
 
 export default defineConfig({
-    cacheDir: '.cache/vite',
+    cacheDir: '.cache',
     server: {
         port: 3000,
     },
     plugins: [
         remix({
+            buildDirectory: '.build',
             ignoredRouteFiles: ["**/.*"],
             ssr: false
         }), tsconfigPaths()],
