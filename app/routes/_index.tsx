@@ -99,22 +99,8 @@ function Recommendations() {
                 'When I first met Chris, I was struck by two outstanding qualities: his blazing technical acumen and his relentless pursuit of excellence. In the time that we\'ve worked together I have seen these qualities in action, both in his individual work and in the way that he works with his team: he\'s confident in his own considerable knowledge and abilities, and also conscious of his own limitations and eager to learn from his teammates. He actively seeks out collaboration in a way that helps the entire team improve. He\'s a voracious and thoughtful reader and has a knack for synthesizing data into concrete recommendations, which he then presents to the team to workshop into new solutions.',
                 'In short, he\'s an excellent engineer and an excellent teammate, and would improve any team he joined.'
             ]
-        },
-        {
-            id: 1,
-            name: 'Christian Enamorado',
-            recommendation: [
-                'Christopher is one of those rare developers who is willing to go the distance and then some to hone his skills. Given the proper opportunities and guidance that willingness fueled by his optimism will make him a valued member of any team. During my time working with him, he showed time and time again that he wanted to work with others to build something greater.'
-            ]
         }
     ];
-
-    useEffect(() => {
-        const next = setTimeout(() =>
-            setIndex(previous => (previous + 1) % source.length), 10000);
-
-        return () => clearTimeout(next);
-    }, [index]);
 
     return (
         <div className={'flex justify-center my-16'}>
