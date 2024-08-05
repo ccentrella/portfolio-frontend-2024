@@ -29,7 +29,7 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Header/>
+        {/*<Header/>*/}
         <Outlet />
         <ScrollRestoration />
         <Footer />
